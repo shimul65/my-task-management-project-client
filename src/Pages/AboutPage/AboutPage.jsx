@@ -1,14 +1,14 @@
-// import HelpPageBanner from "../HelpCenter/HelpPageBanner";
-// import About from "../Home/About";
+import HelpPageBanner from "../HelpCenter/HelpPageBanner";
+import About from "../Home/About";
 
 
-// const AboutPage = () => {
-//     return (
-//         <div>
-//             <HelpPageBanner></HelpPageBanner>
-//             <About></About>
-//         </div>
-//     );
-// };
+const AboutPage = () => {
+    return (
+        <div>
+            <HelpPageBanner></HelpPageBanner>
+            <About></About>
+        </div>
+    );
+};
 
-// export default AboutPage;
+export default AboutPage;
