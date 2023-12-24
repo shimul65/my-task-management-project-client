@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { IoHomeOutline } from "react-icons/io5";
-import { RiContactsLine } from "react-icons/ri";
-// import { LuLayoutDashboard } from "react-icons/lu";
+import logo from '../../assets/logo.svg'
+import logo2 from '../../assets/logo2.svg'
 import { MdOutlineContacts } from "react-icons/md";
-import Login from "../../Pages/Login/Login";
-// import { PiStarOfDavid } from "react-icons/pi";
+import { SiHelpscout } from "react-icons/si";
 import profile from '../../assets/profile.png'
 
 
@@ -31,28 +30,24 @@ const Navbar = () => {
     }, []);
 
     const navLinks = <>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/'>
-            <IoHomeOutline className="text-2xl text-blue-800"></IoHomeOutline>
+        <li className="py-1"><NavLink className={'flex gap-2 items-center'} to='/'>
+            <IoHomeOutline className="text-2xl "></IoHomeOutline>
             <p>Home</p>
         </NavLink></li>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/surveys'>
-            <MdOutlineContacts className="text-2xl text-blue-800"></MdOutlineContacts>
-            <p>Surveys</p>
+        <li className="py-1"><NavLink className={'flex gap-2 items-center'} to='/helpCenter'>
+            <SiHelpscout className="text-2xl "></SiHelpscout>
+            <p>Help Center</p>
         </NavLink></li>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/about'>
-            <MdOutlineContacts className="text-2xl text-blue-800"></MdOutlineContacts>
+        <li className="py-1"><NavLink className={'flex gap-2 items-center'} to='/about'>
+            <MdOutlineContacts className="text-2xl "></MdOutlineContacts>
             <p>About US</p>
-        </NavLink></li>
-        <li className="py-2"><NavLink className={'flex gap-2 items-center'} to='/contact'>
-            <RiContactsLine className="text-2xl text-blue-800"></RiContactsLine>
-            <p>Contact</p>
         </NavLink></li>
 
     </>
 
 
     return (
-        <div className={`fixed navbar2 z-10 w-full p-3 ${scrolling ? 'bg-gradient-to-b from-sky-300 to-blue-100' : ''}`}>
+        <div className={`fixed navbar2 z-10 w-full p-2 ${scrolling ? 'bg-white' : ''}`}>
             <div className="navbar container mx-auto font-semibold">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -63,15 +58,21 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <Link to='/' ><img className='w-[150px]' src="" alt="" /></Link>
-                </div>
-                <div className={`navbar-center hidden lg:flex ${scrolling ? 'text-black' : 'text-white'} `}>
-                    <ul className="flex justify-center items-center gap-6 px-1">
-                        {navLinks}
-                    </ul>
+                    <Link to='/' > <div className='flex items-center lg:pl-8 gap-2'>
+                        {
+                            scrolling ? <img className='w-12' src={logo} alt="" /> : <img className='w-12' src={logo2} alt="" />
+                        }
+                        {/* <img className='w-12' src={logo} alt="" /> */}
+                        <span className={` text-4xl font-bold ${scrolling ? 'text-[#484c7f]' : 'text-white'}`}>My-Task</span>
+                    </div></Link>
                 </div>
 
                 <div className="navbar-end">
+                    <div className={`mr-5 hidden lg:flex ${scrolling ? 'text-black' : 'text-white'} `}>
+                        <ul className="flex justify-center items-center gap-6 px-1">
+                            {navLinks}
+                        </ul>
+                    </div>
                     {
                         user ?
                             <div className="dropdown dropdown-end ">
@@ -135,22 +136,7 @@ const Navbar = () => {
                             </div>
                             :
                             <>
-                                {/* <div className="btn-epic shadow-md shadow-sky-300" onClick={() => document.getElementById('my_modal_5').showModal()}>
-                                    <div>
-                                        <span>Log in</span><span>Log in</span>
-                                    </div>
-                                </div>
-
-                                <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-                                    <div className="shadow-2xl glass  px-20 card bg-[#EBF4F]">
-                                        <Login></Login>
-                                        <div className="modal-action">
-                                            <form method="dialog" className="">
-                                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </dialog> */}
+                                <Link to='/login'> <p className="btn btn-five bg-transparent  text-xl" style={{ width: '156px', color: scrolling ? 'black' : '' }}>Login</p></Link>
                             </>
                     }
                 </div>
