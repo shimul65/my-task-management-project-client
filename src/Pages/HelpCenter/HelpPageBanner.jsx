@@ -1,10 +1,11 @@
-import banner from '../../assets/subscribe-bg.svg'
+import banner from '../../assets/wave1.svg'
 
 const HelpPageBanner = () => {
     return (
         <div className="w-full relative">
             <div className=" hero relative w-full md:h-[700px]"
                 style={{ backgroundImage: `url(${banner})`, backgroundSize: '' }}>
+                    
                 <div className="mt-24 mb-12 md:mt-0 md:mb-0 text-left flex gap-16">
                     <div className="flex flex-col items-center space-y-7 lg:mb-20">
                         <h2 className="text-3xl md:text-5xl font-extrabold text-center text-white"><span>My-Task & Project </span>

@@ -6,6 +6,7 @@ import logo2 from '../../assets/logo2.svg'
 import { MdOutlineContacts } from "react-icons/md";
 import { SiHelpscout } from "react-icons/si";
 import profile from '../../assets/profile.png'
+import './Navbar.css'
 
 
 const Navbar = () => {
@@ -30,15 +31,15 @@ const Navbar = () => {
     }, []);
 
     const navLinks = <>
-        <li className="py-1"><NavLink className={'flex gap-2 items-center'} to='/'>
+        <li className="py-1"><NavLink className={'flex gap-2 items-center hover:text-[#05bcff]'} to='/'>
             <IoHomeOutline className="text-2xl "></IoHomeOutline>
             <p>Home</p>
         </NavLink></li>
-        <li className="py-1"><NavLink className={'flex gap-2 items-center'} to='/helpCenter'>
+        <li className="py-1"><NavLink className={'flex gap-2 items-center hover:text-[#05bcff]'} to='/helpCenter'>
             <SiHelpscout className="text-2xl "></SiHelpscout>
             <p>Help Center</p>
         </NavLink></li>
-        <li className="py-1"><NavLink className={'flex gap-2 items-center'} to='/about'>
+        <li className="py-1"><NavLink className={'flex gap-2 items-center hover:text-[#05bcff]'} to='/about'>
             <MdOutlineContacts className="text-2xl "></MdOutlineContacts>
             <p>About US</p>
         </NavLink></li>

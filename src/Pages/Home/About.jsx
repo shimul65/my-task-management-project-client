@@ -24,64 +24,64 @@ const About = () => {
                 <div className="container mx-auto">
                     <div className="grid grid-cols-1 gap-6 md:grid-cols-5 mb-14 mx-2">
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 bg-white border shadow-xl" src={icon1} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl bg-white border shadow-xl" src={icon1} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Project Management
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 bg-white border shadow-xl" src={icon2} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl bg-white border shadow-xl" src={icon2} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Bootstrap 5x
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 w-[65%] bg-white border shadow-xl" src={icon3} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl w-[65%] bg-white border shadow-xl" src={icon3} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Boilerplate
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 bg-white border shadow-xl" src={icon4} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl bg-white border shadow-xl" src={icon4} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Authorization
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 bg-white border shadow-xl" src={icon5} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl bg-white border shadow-xl" src={icon5} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 User Management
 
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 bg-white border shadow-xl" src={icon6} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl bg-white border shadow-xl" src={icon6} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Role Management
 
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 bg-white border shadow-xl" src={icon7} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl bg-white border shadow-xl" src={icon7} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Skeleton
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 w-[65%] bg-white border shadow-xl" src={icon8} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl w-[65%] bg-white border shadow-xl" src={icon8} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 W3C Validated
 
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 bg-white border shadow-xl" src={icon9} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl bg-white border shadow-xl" src={icon9} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Sass
                             </p>
                         </div>
                         <div className="flex items-center flex-col items- justify-center">
-                            <img className="p-10 w-[65%] bg-white border shadow-xl" src={icon10} alt="" />
+                            <img className="p-10 rounded-tl-3xl rounded-br-3xl w-[65%] bg-white border shadow-xl" src={icon10} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Fully responsive
 
