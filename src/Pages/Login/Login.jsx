@@ -85,8 +85,7 @@ const Login = () => {
                                         }</span>
                                 </div>
                             </div>
-                            <div className="form-control my-6 bg-gradient-to-r from-via-amber-500 to-">
-
+                            <div className="form-control my-6">
                                 <button className="btn mx-auto btn-five btn-style1 bg-transparent">
                                     <span className='text-2xl'>Sign In</span>
                                 </button>

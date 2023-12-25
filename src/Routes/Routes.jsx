@@ -8,6 +8,10 @@ import HelpCenter from "../Pages/HelpCenter/HelpCenter";
 import AboutPage from "../Pages/AboutPage/AboutPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
+import PrivateRoutes from "./PrivateRoutes";
+import Dashboard from "../Layout/Dashboard/Dashboard";
+import MyTasks from "../Pages/Dashboard/MyTasks/MyTasks";
+import AddTasks from "../Pages/Dashboard/AddTasks/AddTasks";
 
 const router = createBrowserRouter([
     {
@@ -37,52 +41,21 @@ const router = createBrowserRouter([
             },
         ]
     },
-    // {
-    //     path: "/dashboard",
-    //     element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
-    //     errorElement: <ErrorPage></ErrorPage>,
-    //     children: [
-    //         {
-    //             path: "/dashboard/userHome",
-    //             element: <UserHome></UserHome>
-    //         },
-    //         {
-    //             path: "/dashboard/cart",
-    //             element: <Cart></Cart>
-    //         },
-    //         {
-    //             path: "/dashboard/payment",
-    //             element: <Payment></Payment>
-    //         },
-    //         {
-    //             path: "/dashboard/paymentHistory",
-    //             element: <PaymentHistory></PaymentHistory>
-    //         },
-
-    //         // admin routes
-    //         {
-    //             path: "/dashboard/adminHome",
-    //             element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
-    //         },
-    //         {
-    //             path: "/dashboard/users",
-    //             element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
-    //         },
-    //         {
-    //             path: "/dashboard/addItems",
-    //             element: <AdminRoute><AddItems></AddItems></AdminRoute>
-    //         },
-    //         {
-    //             path: "/dashboard/updateItem/:id",
-    //             element: <AdminRoute><UpdateItems></UpdateItems></AdminRoute>,
-    //             loader: ({ params }) => fetch(`https://bistro-boss-sever-cyan.vercel.app/menus/${params.id}`)
-    //         },
-    //         {
-    //             path: "/dashboard/manageItems",
-    //             element: <AdminRoute><ManageItems></ManageItems></AdminRoute>
-    //         },
-    //     ]
-    // },
+    {
+        path: "/dashboard",
+        element: <PrivateRoutes><Dashboard></Dashboard></PrivateRoutes>,
+        errorElement: <ErrorPage></ErrorPage>,
+        children: [
+            {
+                path: "/dashboard/myTasks",
+                element: <MyTasks></MyTasks>
+            },
+            {
+                path: "/dashboard/addTasks",
+                element: <AddTasks></AddTasks>
+            },
+        ]
+    },
 ]);
 
 export default router;

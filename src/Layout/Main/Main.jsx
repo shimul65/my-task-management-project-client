@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import footerImg from '../../assets/footer-bg.svg'
+import footerImg from '../../assets/footerbg.svg'
 import bg from '../../assets/dots.svg'
 import Footer from "./Footer";
 import { Toaster } from "react-hot-toast";

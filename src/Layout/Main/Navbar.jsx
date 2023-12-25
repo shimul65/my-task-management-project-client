@@ -55,7 +55,7 @@ const Navbar = () => {
             <p>Home</p>
         </NavLink></li>
         {
-            user && <li className="py-1"><NavLink className={'flex gap-2 items-center hover:text-[#05bcff]'} to='/dashboard'>
+            user && <li className="py-1"><NavLink className={'flex gap-2 items-center hover:text-[#05bcff]'} to='/dashboard/myTasks'>
             <IoHomeOutline className="text-xl "></IoHomeOutline>
             <p>Dashboard</p>
         </NavLink></li>

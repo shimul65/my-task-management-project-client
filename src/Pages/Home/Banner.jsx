@@ -1,4 +1,4 @@
-import banner from '../../assets/hero-bg.svg'
+import banner from '../../assets/herobg.svg'
 import banner2 from '../../assets/hero-img.png'
 import './Home.css'
 const Banner = () => {

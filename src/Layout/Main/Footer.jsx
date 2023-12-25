@@ -11,11 +11,6 @@ const Footer = () => {
         <footer className='container mx-auto text-white'>
             <div className="footer mt-10 lg:pt-32 py-16 pl-10 lg:pl-0 ">
                 <nav>
-                    {/* <header className="footer-title">Key features</header> */}
-                    {/* <a className="link link-hover text-black">Translate survey</a> */}
-                    {/* <a className="link link-hover text-black">Survey templates</a> */}
-                    {/* <a className="link link-hover text-black">Security</a> */}
-                    {/* <a className="link link-hover text-black">Integrations</a> */}
                 </nav>
 
                 <aside className=''>
