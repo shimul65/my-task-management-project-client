@@ -8,8 +8,8 @@ import logo2 from '../../assets/login-img.svg'
 import { useState } from 'react';
 import useAuth from '../../Hooke/useAuth';
 import useAxiosPublic from '../../Hooke/useAxiosPublic';
-// import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 import { useForm } from 'react-hook-form';
+import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 
 // const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 // const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -279,7 +279,7 @@ const Register = () => {
                         <p className=" text-center text-gray-400">Already have an account? <Link to='/login'><span className="text-[#F19828] underline font-medium">Sign in here</span></Link></p>
                         <div className="divider">Or sign up with</div>
                         <div className="w-full mt-5">
-                            {/* <SocialLogin></SocialLogin> */}
+                            <SocialLogin></SocialLogin>
                         </div>
                     </div>
                 </div>
