@@ -12,6 +12,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import Dashboard from "../Layout/Dashboard/Dashboard";
 import MyTasks from "../Pages/Dashboard/MyTasks/MyTasks";
 import AddTasks from "../Pages/Dashboard/AddTasks/AddTasks";
+import UpdateTask from "../Pages/Dashboard/UpdateTask/UpdateTask";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
             {
                 path: "/dashboard/addTasks",
                 element: <AddTasks></AddTasks>
+            },
+            {
+                path: "/dashboard/updateTask/:id",
+                element: <UpdateTask></UpdateTask>,
+                loader: ({ params }) => fetch(`http://localhost:5053/tasks/${params?.id}`)
             },
         ]
     },

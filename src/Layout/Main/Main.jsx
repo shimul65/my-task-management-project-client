@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import footerImg from '../../assets/footerbg.svg'
+import footer from '../../assets/banner/foot.png'
 import bg from '../../assets/dots.svg'
 import Footer from "./Footer";
 import { Toaster } from "react-hot-toast";
@@ -19,7 +19,7 @@ const Main = () => {
             }
             <Outlet></Outlet>
             {
-                isLogin || isRegister || <div className="border border-white" style={{ backgroundImage: `url(${footerImg})`, backgroundSize: '100% 100%' }}>
+                isLogin || isRegister || <div className="border border-white" style={{ backgroundImage: `url(${footer})`, backgroundSize: '100% 100%' }}>
                     <Footer></Footer>
                 </div>
             }

@@ -1,11 +1,11 @@
-import banner from '../../assets/herobg.svg'
+import img23 from '../../assets/banner/banner1.png'
 import banner2 from '../../assets/hero-img.png'
 import './Home.css'
 const Banner = () => {
     return (
         <div className="w-full relative">
             <div className=" hero relative w-full md:h-[700px]"
-                style={{ backgroundImage: `url(${banner})`, backgroundSize: '100% 100%' }}>
+                style={{ backgroundImage: `url(${img23})`, backgroundSize: '100% 100%' }}>
                 <div className="mt-24 mb-12 md:mt-0 md:mb-0 text-left flex gap-16">
                     <div className="flex flex-col  space-y-7 lg:mb-20">
                         <h2 className="text-3xl md:text-5xl font-extrabold text-left text-white"><span>My-Task & Project </span>
