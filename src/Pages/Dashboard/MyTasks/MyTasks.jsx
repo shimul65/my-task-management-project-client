@@ -1,3 +1,4 @@
+
 import useAuth from "../../../Hooke/useAuth";
 import { Link, } from "react-router-dom";
 import useAxiosSecure from "../../../Hooke/useAxiosSecure";
@@ -6,54 +7,26 @@ import moment from "moment/moment";
 import { CiEdit } from "react-icons/ci";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
+import { useDrag, useDrop } from "react-dnd";
 
 const MyTasks = () => {
 
-    const [tasks, setMyTasks] = useState([]);
     const { user } = useAuth();
 
-    const [todoTasks, setTodoTasks] = useState([]);
-    const [ongoingTasks, setOngoingTasks] = useState([]);
-    const [completedTasks, setCompletedTasks] = useState([]);
-
     const axiosSecure = useAxiosSecure();
-    const { data: myTasks, refetch } = useQuery({
+    const { data: myTasks = [], refetch } = useQuery({
         queryKey: [user?.email, 'tasks'],
-        // enabled: !loading,
         queryFn: async () => {
             const res = await axiosSecure.get(`/tasks?email=${user.email}`);
             return res.data;
         }
     })
 
-    useEffect(() => {
-        if (myTasks) {
-            localStorage.setItem('myTasks', JSON.stringify(myTasks));
-        }
-    }, [myTasks]);
-
-    useEffect(() => {
-        if (myTasks) {
-            setMyTasks(JSON.parse(localStorage.getItem('myTasks')))
-        }
-    }, [myTasks]);
-
-    console.log(tasks);
-
-    useEffect(() => {
-        const fTodoTasks = tasks.filter(task => task.status === "todo");
-        const fOngoingTasks = tasks.filter(task => task.status === "ongoing");
-        const fCompletedTasks = tasks.filter(task => task.status === "completed");
-
-        setTodoTasks(fTodoTasks);
-        setOngoingTasks(fOngoingTasks);
-        setCompletedTasks(fCompletedTasks);
-
-    }, [tasks])
+    const fTodoTasks = myTasks?.filter(task => task.status === "todo");
+    const fOngoingTasks = myTasks?.filter(task => task.status === "ongoing");
+    const fCompletedTasks = myTasks?.filter(task => task.status === "completed");
 
     const statusLists = ['To-Do Tasks', 'Ongoing Tasks', 'Completed Tasks']
-
 
     const handleDelete = _id => {
         Swal.fire({
@@ -82,7 +55,6 @@ const MyTasks = () => {
         })
     }
 
-
     return (
         <div>
             <div className="pb-16">
@@ -102,81 +74,14 @@ const MyTasks = () => {
                             statusLists.map((statusList, index) => <Section
                                 key={index}
                                 statusList={statusList}
-                                tasks={tasks}
-                                setMyTasks={setMyTasks}
-                                todoTasks={todoTasks}
-                                ongoingTasks={ongoingTasks}
-                                completedTasks={completedTasks}
+                                myTasks={myTasks}
+                                refetch={refetch}
+                                todoTasks={fTodoTasks}
+                                ongoingTasks={fOngoingTasks}
+                                completedTasks={fCompletedTasks}
                                 handleDelete={handleDelete}
                             ></Section>)
                         }
-
-
-                        {/* to-do tasks list */}
-                        <div className="flex flex-col gap-6">
-                            {/* <div className="flex bg-[#ffbc6b] p-5 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
-                                <div className="flex gap-5 justify-center items-center ">
-                                    <div>
-                                        <h2 className="text-2xl font-bold">To-Do Tasks</h2>
-                                    </div>
-                                </div>
-                            </div> */}
-                            {/* {
-                                myTasks?.map(task =>
-                                    <div key={task._id} className="flex cursor-pointer bg-white p-8 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
-                                        <div className="">
-                                            <div className="flex gap-6 justify-between items-center">
-                                                <div className="text-2xl font-semibold text-[#484c7f]">
-                                                    {task.title}
-                                                </div>
-                                                <div className="flex gap-2 items-center ">
-                                                    <Link to={`/dashboard/updateTask/${task._id}`}>
-                                                        <div className="text-3xl text-blue-500">
-                                                            <CiEdit></CiEdit>
-                                                        </div>
-                                                    </Link>
-                                                    <div onClick={() => handleDelete(task._id)} className="text-2xl text-red-500">
-                                                        <RiDeleteBin6Line></RiDeleteBin6Line>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <p className="my-3">{task.description}</p>
-                                            <div>
-                                                Deadline: {moment(task.deadline).format('LL')}
-                                            </div>
-                                            <div>
-                                                Priority: {task.priority}
-                                            </div>
-                                        </div>
-                                    </div>
-                                )
-                            } */}
-
-                        </div>
-
-                        {/* ongoing tasks list */}
-
-                        {/* <div className="flex flex-col gap-6">
-                            <div className="flex bg-[#F1C8DB] p-5 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
-                                <div className="flex gap-5 justify-center items-center ">
-                                    <div>
-                                        <h2 className="text-2xl font-bold">Ongoing Tasks</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
-
-                        {/* completed tasks list */}
-
-                        {/* <div className="flex flex-col gap-6">
-                            <div className="flex bg-[#A0D9B4] p-5 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
-                                <div className="flex gap-5 justify-center items-center ">
-                                    <div>
-                                        <h2 className="text-2xl font-bold">Completed Tasks</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> */}
 
                     </div>
                 </div>
@@ -187,44 +92,82 @@ const MyTasks = () => {
 
 export default MyTasks;
 
+// task section todo, ongoing, and completed
 const Section = ({
     statusList,
-    tasks,
-    setMyTasks,
     todoTasks,
     ongoingTasks,
     completedTasks,
+    refetch,
     handleDelete }) => {
+
+    const axiosSecure = useAxiosSecure();
+
+    const [{ isOver }, drop] = useDrop(() => ({
+        accept: 'task',
+        drop: (item) => addItemToSection(item.task),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    }))
 
     let text = "To-Do Tasks";
     let bgColor = "#ffbc6b";
     let tasksToMap = todoTasks;
+    let status = "todo";
 
     if (statusList === 'Ongoing Tasks') {
         text = 'Ongoing Tasks';
         bgColor = "#F1C8DB";
         tasksToMap = ongoingTasks;
+        status = "ongoing";
     }
 
     if (statusList === 'Completed Tasks') {
         text = 'Completed Tasks';
         bgColor = "#F1C8DB";
         tasksToMap = completedTasks;
+        status = "completed"
+    }
+
+    const addItemToSection = (task) => {
+
+        const updateTask = {
+            title: task.title,
+            description: task.description,
+            priority: task.priority,
+            deadline: task.deadline,
+            status: status,
+        }
+        axiosSecure.patch(`/tasks/${task._id}`, updateTask)
+            .then(res => {
+                console.log(res.data);
+                if (res.data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: `Your Task Update Successfully`,
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    refetch();
+                }
+            })
     }
 
     return <>
-        <div className="flex flex-col gap-6">
+        <div ref={drop} className={`flex flex-col p-1 gap-6 rounded-md ${isOver ? 'bg-slate-200' : ''}`}>
 
-            <Header text={text} bgColor={bgColor} count={tasksToMap.length}></Header>
+            <Header
+                text={text} bgColor={bgColor} count={tasksToMap.length}>
+            </Header>
 
             {
-                tasksToMap.length > 0 && tasksToMap.map(task => <Task
-                    key={task._id}
-                    task={task}
-                    tasks={tasks}
-                    setMyTasks={setMyTasks}
-                    handleDelete={handleDelete}
-                ></Task>
+                tasksToMap.length > 0 && tasksToMap.map(task =>
+                    <Task
+                        key={task._id}
+                        task={task}
+                        handleDelete={handleDelete}
+                    ></Task>
                 )
             }
 
@@ -232,6 +175,7 @@ const Section = ({
     </>
 }
 
+// task section header (to-do, ongoing, completed)
 const Header = ({ text, bgColor, count }) => {
 
     return (
@@ -246,19 +190,29 @@ const Header = ({ text, bgColor, count }) => {
     )
 }
 
-const Task = ({ task, tasks, setMyTasks, handleDelete }) => {
+// single task by status
+const Task = ({ task, handleDelete }) => {
 
-    
+    const [{ isDragging }, drag] = useDrag(() => ({
+        type: 'task',
+        item: { task: task },
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        })
+    }))
 
     return (
-        <div className="flex cursor-pointer bg-white p-8 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
+        <div
+            ref={drag}
+            className={`flex cursor-pointer bg-white p-8 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ${isDragging ? 'opacity-25' : 'opacity-100'
+                }`}>
             <div className="">
                 <div className="flex gap-6 justify-between items-center">
                     <div className="text-2xl font-semibold text-[#484c7f]">
                         {task.title}
                     </div>
                     <div className="flex gap-2 items-center ">
-                        <Link to={`/dashboard/updateTask/${task._id}`}>
+                        <Link to={`/dashboard/updateTask/${task._id} `}>
                             <div className="text-3xl text-blue-500">
                                 <CiEdit></CiEdit>
                             </div>
