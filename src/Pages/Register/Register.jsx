@@ -11,9 +11,6 @@ import useAxiosPublic from '../../Hooke/useAxiosPublic';
 import { useForm } from 'react-hook-form';
 import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 
-// const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-// const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
-
 const Register = () => {
 
     const { createUser, handleUpdateProfile } = useAuth();
@@ -83,72 +80,6 @@ const Register = () => {
             });
             return;
         }
-
-        // const res = await axiosPublic.post(image_hosting_api, imageFile, {
-        //     headers: {
-        //         'content-type': 'multipart/form-data'
-        //     }
-        // });
-        // console.log(res.data);
-
-        // if (res.data.success) {
-        //     const photoURL = res.data.data.display_url;
-        //     //create new user
-        //     createUser(email, password)
-        //         .then(result => {
-        //             const user = result.user;
-        //             console.log(user);
-
-        //             // update profile
-        //             handleUpdateProfile(name, photoURL)
-        //                 .then(() => {
-        //                     // create new user entry in database
-        //                     const userInfo = {
-        //                         name: name,
-        //                         email: email,
-        //                         photoURL: photoURL,
-        //                     }
-        //                     axiosPublic.post('/users', userInfo)
-        //                         .then(res => {
-        //                             console.log(res.data)
-        //                             if (res.data.insertedId) {
-        //                                 navigate(location?.state ? location.state : '/');
-        //                                 Swal.fire({
-        //                                     icon: "success",
-        //                                     title:
-        //                                         `Registration Successful 
-        //                                      Thanks 
-        //                                     ❤️❤️❤️`,
-        //                                     showClass: {
-        //                                         popup: `
-        //                                           animate__animated
-        //                                           animate__fadeInUp
-        //                                           animate__faster
-        //                                         `
-        //                                     },
-        //                                     hideClass: {
-        //                                         popup: `
-        //                                           animate__animated
-        //                                           animate__fadeOutDown
-        //                                           animate__faster
-        //                                         `
-        //                                     },
-        //                                     showConfirmButton: false,
-        //                                     timer: 2500
-        //                                 });
-        //                                 reset();
-        //                             }
-        //                         })
-        //                 }).catch((error) => {
-        //                     console.log(error);
-        //                 });
-        //         })
-        //         .catch(error => {
-        //             const errorCode = error.code;
-        //             const errorMessage = error.message;
-        //             toast.error(errorCode, errorMessage);
-        //         })
-        // }
 
         createUser(email, password)
             .then(result => {
@@ -235,12 +166,6 @@ const Register = () => {
                                     fontFamily: 'Inter'
                                 }} {...register('photo', { required: true })} required />
                             </div>
-                            {/* <div className="form-control mt-6">
-                                <label className="label">
-                                    <span className=" label-text font-semibold">Photo URL</span>
-                                </label>
-                                <input {...register('image', { required: true })} required type="file" className="file-input w-full file-input-info text-black" />
-                            </div> */}
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text text-white">Email Address</span>
