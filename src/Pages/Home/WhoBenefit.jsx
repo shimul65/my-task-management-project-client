@@ -1,20 +1,20 @@
 import img1 from '../../assets/yuji.jpg'
 import img2 from '../../assets/xiongtai.jpg'
-import img3 from '../../assets/KarinaSpivakova.jpg'
-import img4 from '../../assets/MyEducationDiscount.png'
+import img3 from '../../assets/karinaSpivakova.jpg'
+import img4 from '../../assets/myEducationDiscount.png'
 import img5 from '../../assets/engineer.jpg'
-import img6 from '../../assets/VitalySalakhmir.jpg'
-import img7 from '../../assets/Yuuk.jpg'
-import img8 from '../../assets/UNIBO.jpg'
-import img9 from '../../assets/Moe.jpg'
-import img10 from '../../assets/DatingAdvice.png'
+import img6 from '../../assets/vitalySalakhmir.jpg'
+import img7 from '../../assets/yuuk.jpg'
+import img8 from '../../assets/uNIBO.jpg'
+import img9 from '../../assets/moe.jpg'
+import img10 from '../../assets/datingAdvice.png'
 import img11 from '../../assets/freeappsformecom.jpg'
 
 const WhoBenefit = () => {
     return (
         <div className="container mx-auto">
             <div className="pb-16">
-                <div className="mb-12 pt-8">
+                <div className="mb-12 md:pt-8">
                     <div className='flex border2 flex-col mx-auto text-center w-fit ' style={{
                         fontFamily: 'Inter'
                     }}>
@@ -23,16 +23,16 @@ const WhoBenefit = () => {
                     </div >
                 </div>
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-3 mb-14 mx-2">
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mb-14 mx-2">
 
                         <div className="flex flex-col gap-6">
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img1} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img1} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">yuji.チャンネル</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">yuji.チャンネル</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             Creating an environment for life
                                         </p>
@@ -44,10 +44,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img4} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img4} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">MyEducationDiscount.com</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">MyEducationDiscount.com</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             The home of EDU discounts for teachers & staff.
                                         </p>
@@ -59,10 +59,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img7} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img7} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">Yuuk</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">Yuuk</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             GOOD ONE ：“使っていてワクワクするモノ”を紹介
                                         </p>
@@ -74,10 +74,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img10} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img10} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">DatingAdvice.com</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">DatingAdvice.com</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             &rdquo;All things dating&rdquo; daily
                                         </p>
@@ -92,10 +92,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img2} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img2} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">平岡雄太 / DRESS CODE.</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">平岡雄太 / DRESS CODE.</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             Representative director of Drip Co., Ltd.
                                         </p>
@@ -107,10 +107,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img5} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img5} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">엔지니어쪼이</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">엔지니어쪼이</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             Mechanical Engineering student
                                         </p>
@@ -122,10 +122,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img9} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img9} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">Moe</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">Moe</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             Humanist. Engineer. Tech Geek.
                                         </p>
@@ -137,10 +137,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img11} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img11} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">freeappsforme.com</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">freeappsforme.com</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             Free apps reviews
                                         </p>
@@ -151,14 +151,14 @@ const WhoBenefit = () => {
                             </div>
                         </div>
 
-                        <div className="flex flex-col gap-6">
+                        <div className="flex flex-col md:hidden lg:flex gap-6">
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img3} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img3} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">Карина Спивакова</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">Карина Спивакова</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             Author of Yandex Zen and YouTube
                                         </p>
@@ -170,10 +170,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img6} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img6} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">Vitaly Salakhmir</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">Vitaly Salakhmir</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             IT Project manager
                                         </p>
@@ -185,10 +185,10 @@ const WhoBenefit = () => {
                             <div className="flex bg-white p-10 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown ">
                                 <div className="flex gap-5 items-center">
                                     <div className="text-5xl text-[#484c7f]">
-                                        <img className="w-[100px] rounded-full" src={img8} alt="" />
+                                        <img className="w-[150px] lg:w-[100px] rounded-full" src={img8} alt="" />
                                     </div>
                                     <div>
-                                        <h2 className="text-2xl font-bold">Yohama Caraballo-Arias M.D.</h2>
+                                        <h2 className="text-lg md:text-xl lg:text-2xlfont-bold">Yohama Caraballo-Arias M.D.</h2>
                                         <p className="text-lg mt-1 font-semibold text-[#484c7f]">
                                             ICOH, IOMSC, professor, writer and researcher @ UNIBO-Italy
                                         </p>

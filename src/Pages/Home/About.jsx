@@ -13,7 +13,7 @@ const About = () => {
     return (
         <div className="container mx-auto">
             <div className="pb-16">
-                <div className="mb-12 pt-8">
+                <div className="mb-12">
                     <div className='flex border2 flex-col mx-auto text-center w-fit ' style={{
                         fontFamily: 'Inter'
                     }}>
@@ -22,7 +22,7 @@ const About = () => {
                     </div >
                 </div>
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-5 mb-14 mx-2">
+                    <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-5 mb-14 mx-2">
                         <div className="flex items-center flex-col items- justify-center">
                             <img className="p-10 rounded-tl-3xl rounded-br-3xl bg-white border shadow-xl" src={icon1} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
@@ -80,7 +80,7 @@ const About = () => {
                                 Sass
                             </p>
                         </div>
-                        <div className="flex items-center flex-col items- justify-center">
+                        <div className="flex md:hidden lg:flex items-center flex-col items- justify-center">
                             <img className="p-10 rounded-tl-3xl rounded-br-3xl w-[65%] bg-white border shadow-xl" src={icon10} alt="" />
                             <p className="mt-6 text- text-xl font-semibold text-[#484c7f]">
                                 Fully responsive

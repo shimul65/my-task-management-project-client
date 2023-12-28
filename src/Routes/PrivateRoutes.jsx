@@ -1,6 +1,7 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../Hooke/useAuth";
 import PropTypes from 'prop-types';
+import { PacmanLoader } from "react-spinners";
 
 const PrivateRoutes = ({ children }) => {
 
@@ -9,7 +10,9 @@ const PrivateRoutes = ({ children }) => {
     const location = useLocation();
 
     if (loading) {
-        return <progress className="progress w-24 flex justify-center container mx-auto my-24"></progress>
+        return <div className="flex justify-center min-h-screen items-center">
+            <PacmanLoader size={50}  color="#484c7f" />
+        </div>
     }
     if (user) {
         return children;

@@ -49,16 +49,16 @@ const router = createBrowserRouter([
         children: [
             {
                 path: "/dashboard/myTasks",
-                element: <MyTasks></MyTasks>
+                element: <PrivateRoutes><MyTasks></MyTasks></PrivateRoutes>
             },
             {
                 path: "/dashboard/addTasks",
-                element: <AddTasks></AddTasks>
+                element: <PrivateRoutes><AddTasks></AddTasks></PrivateRoutes>
             },
             {
                 path: "/dashboard/updateTask/:id",
-                element: <UpdateTask></UpdateTask>,
-                loader: ({ params }) => fetch(`http://localhost:5053/tasks/${params?.id}`)
+                element: <PrivateRoutes><UpdateTask></UpdateTask></PrivateRoutes>,
+                loader: ({ params }) => fetch(`https://my-task-management-project-server.vercel.app/tasks/${params?.id}`)
             },
         ]
     },

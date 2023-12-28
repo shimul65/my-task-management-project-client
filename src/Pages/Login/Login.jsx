@@ -1,6 +1,4 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import bg from '../../assets/login/authentication.png'
-// import bg2 from '../../assets/login/authentication1.png'
 import logo from '../../assets/logo.svg'
 import logo2 from '../../assets/login-img.svg'
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -35,7 +33,7 @@ const Login = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 // navigate after log in
-                navigate(location?.state ? location.state?.from : '/');
+                navigate(location?.state ? location.state : '/');
                 toast.success('User Log In Successfully');
             })
             .catch(error => {
@@ -53,13 +51,13 @@ const Login = () => {
         <div className="hero min-h-screen" style={{ backgroundImage: `url(${'bg'})` }}>
             <div className="py-2" >
                 <div className='gap-20 lg:gap-36  w-fit items-center px-24 lg:px-0 flex flex-col mx-auto md:flex-row justify-center lg:justify-between custom-box-shadow'>
-                    <div className="flex-1 flex flex-col items-center space-y-6">
+                    <div className="flex-1 hidden lg:flex flex-col items-center space-y-6">
                         <img className='w-[150px]' src={logo} alt="" />
                         <p className='text-4xl font-bold text-center text-[#484c7f]'>My-Task Let&#39;s Management Better</p>
                         <img className='w-full' src={logo2} alt="" />
                     </div>
-                    <div className=" flex-1 text-white rounded-2xl shadow-xl bg-[#484c7f] py-8 px-10 md:py-16 md:px-24">
-                        <form onSubmit={handleLogin}>
+                    <div className=" mt-[35%] min-h-screen lg:min-h-fit md:mt-[10%] lg:mt-0 flex-1 text-white rounded-2xl shadow-xl bg-[#484c7f] py-8 px-10 md:py-16 md:px-24">
+                        <form onSubmit={handleLogin} className=''>
                             <h2 className="text-3xl font-semibold text-center">Sign in to your account</h2>
                             <hr className="my-6" />
                             <div className="form-control">

@@ -4,9 +4,9 @@ import { FaTasks } from "react-icons/fa";
 
 const Management = () => {
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto pt-8 md:pt-48 lg:pt-0 ">
             <div className="pb-16">
-                <div className="mb-12 pt-8">
+                <div className="mb-12">
                     <div className='flex border2 flex-col mx-auto text-center w-fit ' style={{
                         fontFamily: 'Inter'
                     }}>

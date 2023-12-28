@@ -45,7 +45,7 @@ const MyTasks = () => {
                         if (res.data.deletedCount > 0) {
                             Swal.fire(
                                 'Deleted!',
-                                'Your Posted Job has been deleted.',
+                                'Your Task has been deleted.',
                                 'success'
                             )
                             refetch();
@@ -62,13 +62,13 @@ const MyTasks = () => {
                     <div className='flex border2 flex-col mx-auto text-center w-fit ' style={{
                         fontFamily: 'Inter'
                     }}>
-                        <h2 className=' px-6 border-gray-300 py-5 text-3xl md:text-5xl font-extrabold text-[#484c7f] text-center'>&rdquo; All of your Tasks &rdquo;</h2>
+                        <h2 className=' px-6 md:px-0 lg:px-6 border-gray-300 py-5 text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#484c7f] text-center'>&rdquo; All of your Tasks &rdquo;</h2>
                         <p className="text-gray-500 mb-3">You can rearrange</p>
                     </div >
                 </div>
 
                 <div className="container mx-auto">
-                    <div className="grid grid-cols-1 gap-6 md:grid-cols-3 mb-14 mx-2">
+                    <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 mb-14 mx-2">
 
                         {
                             statusLists.map((statusList, index) => <Section
@@ -125,7 +125,7 @@ const Section = ({
 
     if (statusList === 'Completed Tasks') {
         text = 'Completed Tasks';
-        bgColor = "#F1C8DB";
+        bgColor = "#A0D9B4";
         tasksToMap = completedTasks;
         status = "completed"
     }
@@ -179,7 +179,7 @@ const Section = ({
 const Header = ({ text, bgColor, count }) => {
 
     return (
-        <div className={`flex bg-[${bgColor}] p-5 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown `}>
+        <div className={`flex p-5 border rounded-lg shadow-2xl flex-col items- justify-center animate__animated animate__fadeInDown `} style={{ backgroundColor: bgColor }}>
             <div className="flex gap-5 justify-center items-center ">
                 <div className="flex items-center gap-3">
                     <h2 className="text-2xl font-bold">{text}</h2>
